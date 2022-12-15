@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트06 - 조건문</title>
+</head>
+<body>
+    <ul class="lst">
+        <li class="jumsu">90</li>
+        <li class="jumsu">95</li>
+        <li class="jumsu">80</li>
+        <li class="jumsu">70</li>
+        <li class="jumsu">60</li>
+    </ul>    
+    <div id="tot"></div>
+    <div id="avg"></div>
+    <div id="pan"></div>
+    <div id="hak"></div>
+    <div id="remark"></div>
+    <div id="sisang"></div>
+    <script>
+    var arr = [0, 0, 0, 0, 0];
+    var jum = document.getElementsByClassName("jumsu");
+    var tot = 0;
+    var avg = 0.0;
+    var pan, hak, remark, sisang;
+    
+    for(var i=0;i<jum.length;i++){
+        tot = tot + parseInt(jum[i].innerHTML);
+        arr[i] = parseInt(jum[i].innerHTML);
+    }
+    var t = document.getElementById("tot");
+    /* */
+
+    avg = tot / jum.length;
+    var a =document.getElementById("avg");
+    a.innerHTML = "평균 : "+avg;
+
+    </script>
+</body>
+</html>

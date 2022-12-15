@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 디지털 시계</title>
+    <style>
+    <style>
+    * { font-family: sans-serif; }
+    @font-face {
+        font-family: 'digital';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+        font-weight: normal;
+        font-style:normal;
+    }
+    div, #clock { font-family: 'digital', cursive; font-size:38px; font-style: italic; color: rgb(6, 220, 253); background-color: rgb(27, 27, 28);}
+    .data_fr { width:120px; height:35px; border:3px solid rgb(27, 27, 28); margin: 290px auto; 
+    padding: 40px; box-shadow:2px 2px 3px rgb(41, 60, 65); }
+    </style>
+</head>
+<body>
+    <div class="data_fr">
+        <div id="cal"></div>
+        <div id="clock"></div>
+    </div>
+    <script>
+    timming();
+    var intv = setInterval(function(){ timming(); }, 1000);
+    function timming() {    
+        var timer = new Date();
+        var hour = timer.getHours();    
+        var minute = timer.getMinutes();   
+        var second = timer.getSeconds();   
+        if(hour<=9){ hour="0"+hour;  }
+        if(minute<=9){ minute="0"+minute; }
+        if(second<=9){ second="0"+second; }
+        var clock = document.getElementById("clock");
+        clock.innerHTML = hour + ":" + minute + ":" + second;
+    }
+    </script>
+</body>
+</html>

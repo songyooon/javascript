@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 계산기</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        input[type="button"] { background-color: rgb(138, 176, 215); border:0; outline:0; background-color: rgb(138, 176, 215); color:#fff; width: 50px; height: 36px; line-height: 36px; outline:0; border:0; 
+            border-radius:5px; text-align:center; margin:5px; font-size:18px;}
+        input.blue_btn { background-color: rgb(214, 121, 188); color:#fff; }
+        input.reset_btn { background-color:rgb(121, 203, 96); }   
+        input.long_btn { background-color:rgb(221, 201, 112); color:#fff; width: 180px; }   
+        input.green_btn { background-color: rgb(177, 143, 214); } 
+        #expression { display:block; width: 220px; height: 48px; margin-top:10px; margin-left: 5px;
+        font-size:24px; padding-left: 10px; padding-right: 16px; 
+        text-align: right; }
+        #display { display:block; width: 230px; height: 48px; margin-top:10px; margin-bottom: 10px; margin-left: 5px; 
+        background-color:#000; color:#fff; font-size:24px; padding-left: 10px; padding-right: 10px; line-height: 48px;
+        text-align: right; }
+        #calculator { width: 260px;  margin: 10px auto; border:3px solid rgb(29, 33, 37); }
+        @font-face {
+            font-family: 'digital';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+            font-weight: normal;
+            font-style:normal;
+        }
+        #expression, #display { font-family: 'digital'; }
+        .tit { text-align: center;  padding: 30px; }
+        </style>
+</head>
+<body>
+    <h2 class="tit">계산기</h2>
+    <form id="calculator">
+        <input type="text" id="expression" readonly>
+        <div id="display"></div>
+        <hr>
+        <div class="btn_area">
+            <input type="button" value="7" onclick="compute('7')" />
+            <input type="button" value="8" onclick="compute('8')" />
+            <input type="button" value="9" onclick="compute('9')" />
+            <input type="button" value="AC" onclick="reset()" class="reset_btn" />
+            <input type="button" value="4" onclick="compute('4')" />
+            <input type="button" value="5" onclick="compute('5')" />
+            <input type="button" value="6" onclick="compute('6')" />
+            <input type="button" value="/" onclick="compute('/')" class="blue_btn" />
+            <input type="button" value="1" onclick="compute('1')" />
+            <input type="button" value="2" onclick="compute('2')" />
+            <input type="button" value="3" onclick="compute('3')" />
+            <input type="button" value="*" onclick="compute('*')" class="blue_btn" />
+            <input type="button" value="." onclick="compute('.')" />
+            <input type="button" value="0" onclick="compute('0')" />
+            <input type="button" value="+" onclick="compute('+')" class="blue_btn" />
+            <input type="button" value="-" onclick="compute('-')" class="blue_btn" />
+        </div>
+        <input type="button" value="=" onclick="result()" id="equal" class="long_btn" />
+        <input type="button" value="OFF" onclick="off()" id="onoff" class="green_btn"/>
+    </form>
+    <script>
+    var ac = document.getElementById("ac");
+    var expression = document.getElementById("expression");
+    var display = document.getElementById("display");
+    function compute(ch){ 
+        expression.value = expression.value + ch;
+    }    
+    function reset() { 
+        document.getElementById('display').value = "";
+        document.getElementById('result').value = ""; 
+    }
+    var result = function(){ 
+        var data = eval(expression.value);
+        display.innerHTML = data;
+    }
+    var onoff = document.getElementById("onoff");
+    var off = function(){ self.close(); } 
+    </script>
+</body>
+</html>

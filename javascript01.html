@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트01 -변수와 데이터 입출력</title>
+    <script>
+    //
+    /*
+
+    */
+   var a = "김기태";
+   let b = "유광현";
+   const c = "남송윤";
+   document.write("<h1>당신의 이름은 "+a+"입니다.</h1>");
+    </script>
+</head>
+<body>
+    <div id="print"></div>
+    <div class="data"></div>
+    <div class="data"></div>
+    <div class="data"></div>
+    <a href=""></a><a href=""></a><a href=""></a>
+    <div id ="num1">50</div>
+    <div id="num2">100</div>
+    <div id="name"></div>
+    <div id="result"></div>
+    <script>
+    document.write("<div id='box1'>박스</div>");
+    document.getElementById("print").innerHTML = "<h2>프린트 영역</h2>"
+    document.getElementsByClassName("data")[0].innerHTML = "데이터1";
+    document.getElementsByClassName("data")[1].innerHTML = "데이터2";
+    document.getElementsByClassName("data")[2].innerHTML = "데이터3";
+    document.getElementsByTagName("a")[0].innerHTML = "링크1";
+    document.getElementsByTagName("a")[1].innerHTML = "링크2";
+    document.getElementsByTagName("a")[2].innerHTML = "링크3";
+    var num1 = parceInt(document.getElementById("num1").innerHTML);
+    var num2 = parceInt(document.getElementById("num2").innerHTML);
+    document.getElementById("result").innerHTML = num1+num2;
+    doocument.getElementById("name").innerHTML
+    </script>
+    <noscript>
+    이 브라우저는 자바스크립트가 지원되지 않습니다.
+    </noscript>
+</body>
+</html>
